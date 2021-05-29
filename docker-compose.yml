@@ -1,0 +1,19 @@
+version: '3.8'
+
+services: 
+  spigot-builder:
+    build:
+      context: ./
+      target: spigot-builder
+
+  spigot-server:
+    build:
+      context: ./
+      target: spigot-server
+    volumes: 
+      - minecraft_data:/var/minecraft/data/
+    ports:
+      - "25565:25565"
+    stop_grace_period: 90s
+volumes:
+  minecraft_data:
