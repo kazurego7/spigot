@@ -39,6 +39,6 @@ RUN apt-get update && apt-get install -y \
 
 # spigot サーバー & サーバー起動スクリプトの配置
 COPY --from=spigot-builder /usr/src/spigot-*.jar spigot.jar
-COPY spigot-server/docker_entrypoint.sh docker_entrypoint.sh
+COPY spigot-server/docker-entrypoint.sh docker-entrypoint.sh
 
-ENTRYPOINT [ "./docker_entrypoint.sh" ]
+ENTRYPOINT [ "./docker-entrypoint.sh" ]

@@ -33,5 +33,5 @@ set -eu
 
 agree_eula
 run_spigot
-trap "stop_spigot" SIGTERM
+trap "stop_spigot" SIGTERM # graceful に終了させる
 wait_for_stop
