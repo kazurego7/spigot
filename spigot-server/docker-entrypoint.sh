@@ -12,13 +12,12 @@ agree_eula() {
 # spigot を起動する
 run_spigot() {
   screen -UAmdS spigot java -jar spigot.jar
-  echo "Spigot is running"
+  echo "Spigot is running."
 }
 
 # spigot を終了する
 stop_spigot() {
   screen -S spigot -Xr stuff "stop^M"
-  echo "Spigot is stopped"
 }
 
 # spigot の終了まで待つ
@@ -26,6 +25,7 @@ wait_for_stop() {
   while [ -n "$(screen -list | grep -o spigot)" ]; do
     sleep 10
   done
+  echo "Spigot is stopped."
 }
 
 # メインの処理
