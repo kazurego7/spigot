@@ -1,13 +1,6 @@
 version: '3.8'
 
 services: 
-  spigot-builder:
-    build:
-      context: ./spigot-server
-      target: spigot-builder
-    profiles:
-      - build
-
   spigot-server:
     build:
       context: ./spigot-server
