@@ -3,14 +3,14 @@ version: '3.8'
 services: 
   spigot-builder:
     build:
-      context: ./
+      context: ./spigot-server
       target: spigot-builder
     profiles:
       - build
 
   spigot-server:
     build:
-      context: ./
+      context: ./spigot-server
       target: spigot-server
     volumes: 
       - minecraft_data:/var/minecraft/data/
