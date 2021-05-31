@@ -29,6 +29,7 @@ FROM openjdk:16-jdk-slim AS spigot-server
 
 # ファイル置き場
 RUN mkdir /var/minecraft
+RUN mkdir -p /usr/src/minecraft/config
 WORKDIR /var/minecraft
 
 # ツールのインストール
