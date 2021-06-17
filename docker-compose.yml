@@ -6,7 +6,7 @@ services:
       context: ./spigot-server
       target: spigot-server
     volumes: 
-      - minecraft_data:/var/minecraft/
+      - minecraft_data:/var/minecraft
       - ./spigot-server/config:/usr/src/minecraft/config
     ports:
       - "25565:25565"
