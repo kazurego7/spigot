@@ -19,7 +19,7 @@ RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/art
     && rm BuildTools.jar \
     && rm -r Spigot BuildData Bukkit CraftBukkit apache-maven-*
 
-ENTRYPOINT [ "bash" ]
+CMD [ "bash" ]
 
 
 # ***************************************
@@ -42,4 +42,4 @@ RUN apt-get update && apt-get install -y \
 COPY --from=spigot-builder /usr/src/spigot-*.jar spigot.jar
 COPY docker-entrypoint.sh docker-entrypoint.sh
 
-ENTRYPOINT [ "./docker-entrypoint.sh" ]
+CMD [ "./docker-entrypoint.sh" ]
