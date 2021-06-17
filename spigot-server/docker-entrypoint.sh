@@ -23,7 +23,9 @@ wait_untill_deploy() {
 
 # spigot の設定ファイルを配置する
 install_config() {
-  cp --force /usr/src/minecraft/config/* /var/minecraft
+  if [ -n "$(ls /usr/src/minecraft/config)" ]; then
+    cp -f "/usr/src/minecraft/config/*" /var/minecraft
+  fi
   echo "Spigot config is installed."
 }
 
